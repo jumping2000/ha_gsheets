@@ -1,0 +1,29 @@
+google_sheets_temp:
+  module: gsheets
+  class: GSheets
+  SpreadSheetName: "HA"
+  PathJSON: "/config/12345.json"
+  RunEverySec: 1200 # every 20 mins
+  RunOnceDay: false
+  upload: [
+    {
+      sheetName: "TH Balcone",
+      nameInSheet1: "Temperatura",
+      entity1: "sensor.balcone_temperature",
+      nameInSheet2: "Umidità",
+      entity2: "sensor.balcone_humidity", 
+      nameInSheet3: "Batteria",
+      entity3: "sensor.balcone_battery"
+    },
+    {
+      sheetName: "TH Sala",
+      nameInSheet1: "Temperatura Sala",
+      entity1: "sensor.sala_temperature",
+      nameInSheet2: "Umidità",
+      entity2: "sensor.sala_humidity", 
+      nameInSheet3: "Pressione",
+      entity3: "sensor.sala_pressure", 
+      nameInSheet4: "Batteria",
+      entity4: "sensor.sala_battery"
+    }
+    ]
